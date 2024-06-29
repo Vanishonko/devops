@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+    web:
+        build:
+            context: .
+        volumes:
+            -   .:/var/www/html
+        ports:
+            -   "80:80"
+        networks:
+            - my-network
+        depends_on:
+            -   mysql
+    mysql:
+        container_name: taskapp_db
+        image: mysql:8
+        environment:
+            MYSQL_ROOT_HOST: '%'
+            MYSQL_ROOT_PASSWORD: toor
+            MYSQL_DATABASE: mysql
+        networks:
+            - my-network
+        ports:
+            - "3306:3306"
+        volumes:
+            - dbdata:/var/lib/mysql
+
+volumes:
+    dbdata: {}
+
+networks:
+    my-network:
+        driver: bridge
