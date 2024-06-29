@@ -32,7 +32,7 @@ RUN a2enmod rewrite
 # RUN service apache2 restart
 
 # install Composer
-# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # copy existing application directory contents
 COPY . /var/www/html/
@@ -42,4 +42,3 @@ RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 # change ownership of storage and bootstrap/cache directories to fix permissions issues
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
