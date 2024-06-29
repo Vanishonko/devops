@@ -37,6 +37,9 @@ RUN a2enmod rewrite
 # copy existing application directory contents
 COPY . /var/www/html/
 
+# install Composer dependencies
+RUN composer install --no-interaction --no-dev --optimize-autoloader
+
 # change ownership of storage and bootstrap/cache directories to fix permissions issues
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
