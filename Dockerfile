@@ -29,10 +29,10 @@ RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/Allo
 RUN a2enmod rewrite
 
 # Restart Apache to apply changes (kind of useless since it restarts when the container starts)
-RUN service apache2 restart
+# RUN service apache2 restart
 
 # install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # copy existing application directory contents
 COPY . /var/www/html/
