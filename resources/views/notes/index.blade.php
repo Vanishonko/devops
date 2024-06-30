@@ -9,6 +9,10 @@
     <div class="container">
         <h1 class="title">Notes</h1>
         <a href="{{ route('notes.create') }}" class="button is-primary">Create Note</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="button is-danger">Logout</button>
+        </form>
         @foreach ($notes as $note)
             <div class="box">
                 <p><a href="{{ route('notes.show', $note) }}">{{ $note->content }}</a></p>

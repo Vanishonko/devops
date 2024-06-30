@@ -24,6 +24,11 @@
                     </div>
                 </div>
                 <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" id="remember"> Remember me
+                    </label>
+                </div>
+                <div class="field">
                     <div class="control">
                         <button class="button is-primary">Log in</button>
                     </div>
