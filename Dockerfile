@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    libpq-dev \
     npm \
     zip \
     libzip-dev \
@@ -12,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd mysqli pdo pdo_mysql zip
+    && docker-php-ext-install gd mysqli pdo pdo_mysql pdo_pgsql zip
 
 # Fix index.php being looked for in the wrong place
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
