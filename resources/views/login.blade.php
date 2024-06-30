@@ -29,6 +29,8 @@
                     </div>
                 </div>
             </form>
+            <button class="button is-link" onclick="window.history.back()">Back</button>
+            <button class="button is-link" onclick="window.location.href='/register'">Register</button>
         </div>
     </section>
 </div>

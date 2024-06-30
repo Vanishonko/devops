@@ -35,6 +35,8 @@
                     </div>
                 </div>
             </form>
+            <button class="button is-link" onclick="window.history.back()">Back</button>
+            <button class="button is-link" onclick="window.location.href='/login'">Log in</button>
             <script language='javascript' type='text/javascript'>
                 function check(input) {
                     if (input.value != document.getElementById('password').value) {
