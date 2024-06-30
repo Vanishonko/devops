@@ -8,6 +8,7 @@
 <section class="section">
     <div class="container">
         <h1 class="title">Notes</h1>
+        <a href="{{ route('notes.create') }}" class="button is-primary">Create Note</a>
         @foreach ($notes as $note)
             <div class="box">
                 <p><a href="{{ route('notes.show', $note) }}">{{ $note->content }}</a></p>
