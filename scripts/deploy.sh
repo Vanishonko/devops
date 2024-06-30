@@ -9,3 +9,4 @@ echo "Caching routes..."
 php /var/www/html/artisan route:cache
 
 echo "Running migrations..."
+php artisan migrate --force
