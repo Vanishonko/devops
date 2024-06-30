@@ -15,6 +15,7 @@
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="button is-danger">Delete</button>
+                <button class="button is-link" onclick="window.history.back()">Back</button>
             </form>
         </div>
         </div>

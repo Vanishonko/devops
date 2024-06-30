@@ -24,11 +24,18 @@
                     </div>
                 </div>
                 <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" id="remember"> Remember me
+                    </label>
+                </div>
+                <div class="field">
                     <div class="control">
                         <button class="button is-primary">Log in</button>
                     </div>
                 </div>
             </form>
+            <button class="button is-link" onclick="window.history.back()">Back</button>
+            <button class="button is-link" onclick="window.location.href='/register'">Register</button>
         </div>
     </section>
 </div>

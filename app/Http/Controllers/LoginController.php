@@ -9,21 +9,23 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        // Validate the request data
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required|min:8',
-        ]);
+        $credentials = $request->only('username', 'password');
+        $remember = $request->has('remember');
 
-        // Attempt to log the user in
-        // (you'll need to replace 'email' with the actual field you're using for usernames)
-        if (Auth::attempt($request->only('username', 'password'))) {
+        if (Auth::attempt($credentials, $remember)) {
+            // Authentication passed...
             return redirect()->route('notes.index');
         }
 
-        // If login was not successful, redirect back to the login form with an error message
+        // Authentication failed...
         return back()->withErrors([
-            'login' => 'The provided credentials do not match our records.',
+            'message' => 'The provided credentials do not match our records.',
         ]);
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return redirect('welcome');
     }
 }

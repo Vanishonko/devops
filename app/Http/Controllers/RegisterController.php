@@ -23,10 +23,12 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // Log the user in
-        Auth::login($user);
+        $remember = $request->has('remember');
 
-        // Redirect to the user's dashboard
+        // Log the user in
+        Auth::login($user, $remember);
+
+        // Redirect to the notes index page
         return redirect()->route('notes.index');
     }
 }

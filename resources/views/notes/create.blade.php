@@ -19,6 +19,7 @@
             <div class="field">
                 <div class="control">
                     <button type="submit" class="button is-primary">Create</button>
+                    <button class="button is-link" onclick="window.history.back()">Back</button>
                 </div>
             </div>
         </form>
